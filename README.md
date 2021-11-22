@@ -8,7 +8,4 @@
 
 # Usage
 Same as regular robot
-virtualenv venv
-...activate
-pip install {reqs}
-rcc run
+

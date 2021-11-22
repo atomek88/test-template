@@ -1,0 +1,42 @@
+image: python:3.9.0
+
+pipelines:
+  branches:
+    dev:
+        - step:
+            name: Bandit Security Check
+            caches:
+              - pip
+            script:
+              - pip install bandit
+              - bandit -r -lll .
+        - step:
+            name: Deploy to DEV workspace on Robocloud
+            deployment: Dev
+            caches:
+              - pip
+            script:
+              - curl -o rcc $robocloud_rcc_url
+              - chmod a+x rcc
+              - mkdir -p $HOME/.robocorp
+              - ./rcc cloud push -r $robot_id -w $workspaces_id --account $robocloud_credentials
+
+    master:
+        - step:
+            name: Bandit Security Check
+            caches:
+              - pip
+            script:
+              - pip install bandit
+              - bandit -r -s .
+        - step:
+            name: Deploy to PRD workspace on Robocloud
+            deployment: Prod
+            caches:
+              - pip
+            script:
+              - curl -o rcc $robocloud_rcc_url
+              - chmod a+x rcc
+              - mkdir -p $HOME/.robocorp
+              - ./rcc cloud push -r $robot_id -w $workspaces_id --account $robocloud_credentials
+

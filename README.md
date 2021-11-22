@@ -1,5 +1,14 @@
-# Python robot
+### Robot Template 1.0.1 (Tom edits)
 
-A simple web scraper robot implemented in Python instead of Robot Framework syntax, using the `rpaframework` set of libraries.
+-simple structure of python robot for now
+	* meant to be get to a pure BASE template for python robot w/ some additions
+	* meant to modify template with custom for TA purposes
+-partially integrate file/s structure proposed and some modules
+-keep minimal, dwcli app should take inputs to modify the BASE template
 
-> You can find the full tutorial and instructions on [Robocorp's documentation site](https://robocorp.com/docs/development-guide/python/python-robot).
+# Usage
+Same as regular robot
+virtualenv venv
+...activate
+pip install {reqs}
+rcc run

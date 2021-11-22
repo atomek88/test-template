@@ -1,5 +1,6 @@
 channels:
   # Define conda channels here.
+  - defaults
   - conda-forge
 
 dependencies:
@@ -13,3 +14,8 @@ dependencies:
       # Define pip packages here.
       # https://pypi.org/
       - rpaframework==11.3.0 # https://rpaframework.org/releasenotes.html
+      - google-api-python-client==2.23.0
+      - google-api-python-client==2.23.0
+      - google-auth-httplib2==0.1.0
+      - google-auth-oauthlib==0.4.6
+      - ta-bitwarden-cli==0.6.2
